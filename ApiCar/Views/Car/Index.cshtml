@@ -1,0 +1,107 @@
+﻿@model IEnumerable<ApiCar.Models.Car>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Criar novo carro</a>
+</p>
+
+<p>
+    <a asp-action="AbastecerCarro">Abastecer carro</a>
+</p>
+
+<p>
+    <a asp-action="AutonomiaAllCarro">Listar Autonomia dos carros</a>
+</p>
+
+<p>
+    <a asp-action="AutonomiaMaxCarro">Modelo com maior autonomia</a>
+</p>
+
+<p>
+    <a asp-action="ConsultaMaisRapidoPorDistancia">Modelo mais rapido Por Distancia</a>
+</p>
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Km)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CapacidadeTanque)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QtsLitrosNoTanque)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VelocidadeMedia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Modelo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Autonomia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Preco)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Km)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CapacidadeTanque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QtsLitrosNoTanque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VelocidadeMedia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autonomia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                
+                <td>
+                    @if (item.Modelo.ToString() == "CHEVROLET_ONIX" || item.Modelo.ToString() == "VOLKSWAGEN_GOL")
+                    {
+                        <form asp-action="AtivarModoEconomico" asp-route-id="@item.Id">
+                            <input type="hidden" asp-for="@item.Id" />
+                            <input type="submit" value="Ativar Modo Econômico" />
+                        </form>
+                    }
+                    @if (item.Modelo.ToString() == "CHEVROLET_CELTA" || item.Modelo.ToString() == "FIAT_UNO")
+                    {
+                        <form asp-action="AtivarModoTurbo" asp-route-id="@item.Id">
+                            <input type="hidden" asp-for="@item.Id" />
+                            <input type="submit" value="Ativar Modo Turbo" />
+                        </form>
+                    }
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+

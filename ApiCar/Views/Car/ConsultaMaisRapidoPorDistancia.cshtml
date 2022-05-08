@@ -1,0 +1,32 @@
+﻿@model ApiCar.Models.Car
+
+@{
+    ViewData["Title"] = "Modelo Mais Rapida";
+}
+
+<h1>Consulta Mais rapido por distancia</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ResultadoModeloMaisRapidoPorDistancia" asp-route-distancia="distancia">
+            <div class="form-group">
+                <label class="control-label"> Informe a distância em km</label>
+                <input type="number" id="distancia" name="distancia" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Consultar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar para o inicio</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

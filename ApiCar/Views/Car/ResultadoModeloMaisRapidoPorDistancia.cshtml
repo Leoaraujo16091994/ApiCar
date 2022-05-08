@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ApiCar.Models.Car>
+
+@{
+    ViewData["Title"] = "Resultado Modelo Mais Rapido ";
+}
+
+<h1>Resultado do Modelo Mais Rapido </h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Km)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CapacidadeTanque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtsLitrosNoTanque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VelocidadeMedia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autonomia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Km)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CapacidadeTanque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QtsLitrosNoTanque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VelocidadeMedia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autonomia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<div>
+    <a asp-action="Index">Voltar para o inicio</a>
+</div>
