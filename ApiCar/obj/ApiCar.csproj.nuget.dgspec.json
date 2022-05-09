@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Josafa\\source\\repos\\ApiCar\\ApiCar\\ApiCar.csproj": {}
+    "C:\\Users\\Josafa\\Desktop\\ApiCar\\ApiCar\\ApiCar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Josafa\\source\\repos\\ApiCar\\ApiCar\\ApiCar.csproj": {
+    "C:\\Users\\Josafa\\Desktop\\ApiCar\\ApiCar\\ApiCar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Josafa\\source\\repos\\ApiCar\\ApiCar\\ApiCar.csproj",
+        "projectUniqueName": "C:\\Users\\Josafa\\Desktop\\ApiCar\\ApiCar\\ApiCar.csproj",
         "projectName": "ApiCar",
-        "projectPath": "C:\\Users\\Josafa\\source\\repos\\ApiCar\\ApiCar\\ApiCar.csproj",
+        "projectPath": "C:\\Users\\Josafa\\Desktop\\ApiCar\\ApiCar\\ApiCar.csproj",
         "packagesPath": "C:\\Users\\Josafa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Josafa\\source\\repos\\ApiCar\\ApiCar\\obj\\",
+        "outputPath": "C:\\Users\\Josafa\\Desktop\\ApiCar\\ApiCar\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Josafa\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 
 namespace ApiCar.Controllers
 {
+    [Route("/car")]
+    [ApiController]
     public class CarController : Controller
     {
         private readonly CarContext _context;
@@ -21,7 +23,7 @@ namespace ApiCar.Controllers
             _context = context;
         }
 
-
+        // Return Views
         // GET: Car
         public async Task<IActionResult> Index()
         {
@@ -85,6 +87,7 @@ namespace ApiCar.Controllers
             return View(car);
         }
 
+
         public IActionResult AbastecerCarro()
         {
           return View();
@@ -95,37 +98,26 @@ namespace ApiCar.Controllers
         {
             return View(await _context.Carro.ToListAsync());
         }
-
-
-        public async Task<IActionResult> AutonomiaMaxCarro()
-        {
-            var maiorAutonomia =_context.Carro.Max(x => x.Autonomia);
-            var carro = await _context.Carro.Where(x => x.Autonomia == maiorAutonomia).ToListAsync();
-            return View(carro);
-        }
-
-       
+        
         public async Task<IActionResult> ConsultaMaisRapidoPorDistancia()
         {
             return View();
         }
 
-        public async Task<IActionResult> ResultadoModeloMaisRapidoPorDistancia(int? distancia)
-        {
 
-            var carroComAutonomia = await _context.Carro.Where(x => x.Autonomia >= distancia ).ToListAsync();
-            var maiorVelocidadesDosCarroComAutonomia = carroComAutonomia.Max(x => x.VelocidadeMedia);
-            var carrosMaisRapidos = carroComAutonomia.Where(x => x.VelocidadeMedia == maiorVelocidadesDosCarroComAutonomia);
-          
-            return View(carrosMaisRapidos);
-        }
-
-    
+      
 
 
 
 
 
+
+
+
+
+
+
+        // Verbos
 
 
 
@@ -183,13 +175,13 @@ namespace ApiCar.Controllers
 
 
 
+        /*
 
-
-        [HttpGet, ActionName("GetAll")]
+        [HttpGet("GetAll")]
         public IList<Car> GetAll()
         {
             return _context.Carro.ToList();
-        }
+        }*/
 
        
         [HttpPost]
@@ -284,6 +276,26 @@ namespace ApiCar.Controllers
             return _context.Carro.Any(e => e.Id == id);
         }
 
-        
+
+
+        public async Task<IActionResult> AutonomiaMaxCarro()
+        {
+            var maiorAutonomia = _context.Carro.Max(x => x.Autonomia);
+            var carro = await _context.Carro.Where(x => x.Autonomia == maiorAutonomia).ToListAsync();
+            return View(carro);
+        }
+
+
+        public async Task<IActionResult> ResultadoModeloMaisRapidoPorDistancia(int? distancia)
+        {
+
+            var carroComAutonomia = await _context.Carro.Where(x => x.Autonomia >= distancia).ToListAsync();
+            var maiorVelocidadesDosCarroComAutonomia = carroComAutonomia.Max(x => x.VelocidadeMedia);
+            var carrosMaisRapidos = carroComAutonomia.Where(x => x.VelocidadeMedia == maiorVelocidadesDosCarroComAutonomia);
+
+            return View(carrosMaisRapidos);
+        }
+
+
     }
 }
