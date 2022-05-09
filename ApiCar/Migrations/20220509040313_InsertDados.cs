@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ApiCar.Migrations
 {
@@ -10,9 +9,7 @@ namespace ApiCar.Migrations
         {
             InserirDados(migrationBuilder);
         }
-
-            
-        
+                           
 
         public void InserirDados(MigrationBuilder migrationBuilder) {
 
