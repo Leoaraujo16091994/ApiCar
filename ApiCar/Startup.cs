@@ -37,7 +37,9 @@ namespace ApiCar
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CarContext db)
         {
-            db.Database.Migrate();
+            if (db.Database.EnsureCreated()){ 
+                db.Database.Migrate();
+            }
 
             if (env.IsDevelopment())
             {
