@@ -18,7 +18,7 @@ namespace ApiCar.Models.Enum
         FIAT_PUNTO = 4,
         [Display(Name = " 5 - FIAT_SIENA ")]
         FIAT_SIENA = 5,
-        [Display(Name = " 6- FIAT_UNO ")]
+        [Display(Name = " 6 - FIAT_UNO ")]
         FIAT_UNO = 6,
         [Display(Name = "7 - FIAT_PALIO")]
         FIAT_PALIO = 7,

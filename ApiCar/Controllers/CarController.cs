@@ -14,7 +14,7 @@ namespace ApiCar.Controllers
 {
     [Route("/car")]
     [ApiController]
-    public class CarController : Controller
+    public class CarController : ControllerBase
     {
         private readonly CarContext _context;
 
@@ -23,224 +23,51 @@ namespace ApiCar.Controllers
             _context = context;
         }
 
-        // Return Views
-        // GET: Car
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Carro.ToListAsync());
-        }
 
-        // GET: Car/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var car = await _context.Carro
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (car == null)
-            {
-                return NotFound();
-            }
-
-            return View(car);
-        }
-
-        // GET: Car/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-        // GET: Car/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var car = await _context.Carro.FindAsync(id);
-            if (car == null)
-            {
-                return NotFound();
-            }
-            return View(car);
-        }
-
-        // GET: Car/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var car = await _context.Carro
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (car == null)
-            {
-                return NotFound();
-            }
-
-            return View(car);
-        }
-
-
-        public IActionResult AbastecerCarro()
-        {
-          return View();
-          
-        }
-
-        public async Task<IActionResult> AutonomiaAllCarro()
-        {
-            return View(await _context.Carro.ToListAsync());
-        }
-        
-        public async Task<IActionResult> ConsultaMaisRapidoPorDistancia()
-        {
-            return View();
-        }
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-        // Verbos
-
-
-
-        // POST: Car/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Km,CapacidadeTanque,QtsLitrosNoTanque,VelocidadeMedia,Modelo,Autonomia,Preco,Ativo,CriadoPor,DataCriacao,ModificacaoPor,DataModificacao")] Car car)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(car);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(car);
-        }
-
-
-
-        // POST: Car/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, [Bind("Id,Km,CapacidadeTanque,QtsLitrosNoTanque,VelocidadeMedia,Modelo,Autonomia,Preco,Ativo,CriadoPor,DataCriacao,ModificacaoPor,DataModificacao")] Car car)
-        {
-            if (id != car.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(car);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CarExists(car.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(car);
-        }
-
-
-
-
-
-        /*
-
-        [HttpGet("GetAll")]
+        [HttpGet]
         public IList<Car> GetAll()
         {
             return _context.Carro.ToList();
-        }*/
+        }
 
-       
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AbastecerCarro(int? litrosGasolinaAbastecido, [Bind("Modelo")] Car car)
+        [HttpPut("abastecerCarro")]
+        public async void AbastecerCarro(int? litrosGasolinaAbastecido, EnumModelCar modelo)
         {
 
-            if (Enum.IsDefined(typeof(EnumModelCar), car.Modelo))
+            if (Enum.IsDefined(typeof(EnumModelCar), modelo))
             {
-               var carro = await _context.Carro.Where(x => x.Modelo == car.Modelo).FirstAsync();
+                var carro = _context.Carro.Where(x => x.Modelo == modelo).FirstOrDefault();
 
                 if (carro.CapacidadeTanque >= carro.QtsLitrosNoTanque + litrosGasolinaAbastecido)
                 {
                     carro.QtsLitrosNoTanque = carro.QtsLitrosNoTanque + litrosGasolinaAbastecido;
                     _context.Update(carro);
-                    await _context.SaveChangesAsync();
+                    _context.SaveChanges();
                 }
-                else {
-                   throw new AbastecerMaisQueTanqueSuportaException("O tanque  não suporta a quantidade de litros gasolina abastecida");
+                else
+                {
+                    throw new AbastecerMaisQueTanqueSuportaException("O tanque  não suporta a quantidade de litros gasolina abastecida");
                 }
             }
-            else {
+            else
+            {
                 throw new ModeloInexistente("Não existe o modelo informado");
             }
-        return View(car);
         }
 
-
-
-
-
-
-
-        [HttpPost, ActionName("AtivarModoEconomico")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AtivarModoEconomico(int? id)
-        {
-            var carroSelecionado = await _context.Carro.Where(x => x.Id == id).FirstAsync();
-            if (carroSelecionado.Modelo.ToString() == EnumModelCarModoEconomico.CHEVROLET_ONIX.ToString() ||
-                carroSelecionado.Modelo.ToString() == EnumModelCarModoEconomico.VOLKSWAGEN_GOL.ToString())
+        [HttpGet("autonomiaAllCarro")]
+        public IList<Car> GetAutonomiaAllCarro() {
+            return _context.Carro.Select(news => new Car
             {
-
-                ICar carro = new CarEconomicoDecorator(carroSelecionado);
-                carro = carro.ativarModoEconomico(carroSelecionado);
-                _context.Update(carro);
-                await _context.SaveChangesAsync();
-                return View("index", await _context.Carro.ToListAsync());
-            }
-            else {
-                throw new CarroNaoPossuiModoEconomicoException("O carro não possui modo economico");
-            }            
+                Id = news.Id,
+                Autonomia = news.Autonomia
+            }).ToList();
         }
 
-      
-        [HttpPost, ActionName("AtivarModoTurbo")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AtivarModoTurbo(int? id)
+        [HttpPut("ativarModoTurbo")]
+        public void AtivarModoTurbo(int? id)
         {
-            var carroSelecionado = await _context.Carro.Where(x => x.Id == id).FirstAsync();
+            var carroSelecionado =  _context.Carro.Where(x => x.Id == id).First();
             if (carroSelecionado.Modelo.ToString() == EnumModelCarModoTurbo.CHEVROLET_CELTA.ToString() ||
                 carroSelecionado.Modelo.ToString() == EnumModelCarModoTurbo.FIAT_UNO.ToString())
             {
@@ -248,8 +75,7 @@ namespace ApiCar.Controllers
                 ICar carro = new CarTurboDecorator(carroSelecionado);
                 carro = carro.ativarModoTurbo(carroSelecionado);
                 _context.Update(carro);
-                await _context.SaveChangesAsync();
-                return View("index", await _context.Carro.ToListAsync());
+                 _context.SaveChanges();
             }
             else
             {
@@ -258,44 +84,42 @@ namespace ApiCar.Controllers
         }
 
 
-
-        // POST: Car/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int? id)
+        [HttpPut("ativarModoEconomico")]
+        public void AtivarModoEconomico(int? id)
         {
-            var car = await _context.Carro.FindAsync(id);
-            _context.Carro.Remove(car);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            var carroSelecionado = _context.Carro.Where(x => x.Id == id).First();
+            if (carroSelecionado.Modelo.ToString() == EnumModelCarModoEconomico.CHEVROLET_ONIX.ToString() ||
+                carroSelecionado.Modelo.ToString() == EnumModelCarModoEconomico.VOLKSWAGEN_GOL.ToString())
+            {
+
+                ICar carro = new CarEconomicoDecorator(carroSelecionado);
+                carro = carro.ativarModoEconomico(carroSelecionado);
+                _context.Update(carro);
+                 _context.SaveChangesAsync();
+                }
+            else
+            {
+                throw new CarroNaoPossuiModoEconomicoException("O carro não possui modo economico");
+            }
         }
 
-
-        private bool CarExists(int? id)
-        {
-            return _context.Carro.Any(e => e.Id == id);
-        }
-
-
-
-        public async Task<IActionResult> AutonomiaMaxCarro()
+        [HttpGet("carroMaxAutonomia")]
+        public IList<Car> AutonomiaMaxCarro()
         {
             var maiorAutonomia = _context.Carro.Max(x => x.Autonomia);
-            var carro = await _context.Carro.Where(x => x.Autonomia == maiorAutonomia).ToListAsync();
-            return View(carro);
+            var carro =  _context.Carro.Where(x => x.Autonomia == maiorAutonomia).ToList();
+            return carro;
         }
 
-
-        public async Task<IActionResult> ResultadoModeloMaisRapidoPorDistancia(int? distancia)
+        [HttpGet("carroMaisRapidoByDistancia")]
+        public IList<Car> GetCarroRapidoByDistancia(int? distancia)
         {
 
-            var carroComAutonomia = await _context.Carro.Where(x => x.Autonomia >= distancia).ToListAsync();
+            var carroComAutonomia =  _context.Carro.Where(x => x.Autonomia >= distancia).ToList();
             var maiorVelocidadesDosCarroComAutonomia = carroComAutonomia.Max(x => x.VelocidadeMedia);
-            var carrosMaisRapidos = carroComAutonomia.Where(x => x.VelocidadeMedia == maiorVelocidadesDosCarroComAutonomia);
+            var carrosMaisRapidos = carroComAutonomia.Where(x => x.VelocidadeMedia == maiorVelocidadesDosCarroComAutonomia).ToList();
 
-            return View(carrosMaisRapidos);
+            return carrosMaisRapidos;
         }
-
-
     }
 }
