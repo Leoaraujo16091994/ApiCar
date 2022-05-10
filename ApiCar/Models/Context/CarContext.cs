@@ -4,6 +4,7 @@ namespace ApiCar.Models
 {
     public class CarContext : DbContext
     {
+        public CarContext() { }
         public CarContext(DbContextOptions<CarContext> options) : base(options) { }
 
         public DbSet<Car> Carro { get; set; }

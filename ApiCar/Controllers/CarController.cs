@@ -31,7 +31,7 @@ namespace ApiCar.Controllers
         }
 
         [HttpPut("abastecerCarro")]
-        public async void AbastecerCarro(int? litrosGasolinaAbastecido, EnumModelCar modelo)
+        public void AbastecerCarro(int? litrosGasolinaAbastecido, EnumModelCar modelo)
         {
 
             if (Enum.IsDefined(typeof(EnumModelCar), modelo))

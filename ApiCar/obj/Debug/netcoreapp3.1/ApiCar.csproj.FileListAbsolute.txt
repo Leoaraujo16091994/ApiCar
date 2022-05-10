@@ -102,13 +102,6 @@ C:\Users\Josafa\source\repos\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\Razor\Views\C
 C:\Users\Josafa\source\repos\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\Razor\Views\Car\AutonomiaMaxCarro.cshtml.g.cs
 C:\Users\Josafa\source\repos\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\Razor\Views\Car\ConsultaMaisRapidoPorDistancia.cshtml.g.cs
 C:\Users\Josafa\source\repos\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\Razor\Views\Car\ResultadoModeloMaisRapidoPorDistancia.cshtml.g.cs
-C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.csproj.CoreCompileInputs.cache
-C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.RazorAssemblyInfo.cache
-C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.RazorAssemblyInfo.cs
-C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.AssemblyInfoInputs.cache
-C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.AssemblyInfo.cs
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -181,6 +174,14 @@ C:\Users\Josafa\Desktop\ApiCar\ApiCar\bin\Debug\netcoreapp3.1\runtimes\win-x86\n
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.csprojAssemblyReference.cache
+C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.csproj.CoreCompileInputs.cache
+C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.RazorAssemblyInfo.cache
+C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.RazorAssemblyInfo.cs
+C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.AssemblyInfoInputs.cache
+C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.AssemblyInfo.cs
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.TagHelpers.input.cache
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.TagHelpers.output.cache
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.RazorCoreGenerate.cache
@@ -210,4 +211,3 @@ C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\staticwebassets\Ap
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.dll
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.pdb
 C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.genruntimeconfig.cache
-C:\Users\Josafa\Desktop\ApiCar\ApiCar\obj\Debug\netcoreapp3.1\ApiCar.csprojAssemblyReference.cache
