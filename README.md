@@ -23,8 +23,8 @@ Como subir a aplicação :
 
 Se desejar usar o postman,disponibilizei a collection com as requisições no arquivo ApiCarro.postman_collection.json .
 
-Como rodar através do docker : 
-	OBS : Esses comandos devem ser executados onde se encontra o arquivo DockerFile do projeto.
+Como rodar através do docker :  
+**OBS : Esses comandos devem ser executados onde se encontra o arquivo DockerFile do projeto.**
  - Alterar o DefaultConnection na aba ConnectionStrings do Appsettings.json :
 	"DefaultConnection": "Server=host.docker.internal; Database=CarroApp;User Id={inserirAquiOUsarioDoSeuBanco};Password={inserirAquiOPasswordDoSeuBanco};"
  - Alerar o optionsBuilder.UseSqlServer no CarContext :
