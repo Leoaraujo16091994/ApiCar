@@ -1,7 +1,6 @@
 # ApiCar
 
 
-
 Aplicação utilizando o padrão MVC de Carro feita em .Net Core 3.1, Entity Framework e Banco Sql.
 
 
@@ -13,41 +12,26 @@ Você deve possuir instalado previamente na sua máquina :
 
 
 
-Como susbir a aplicação :
+Como subir a aplicação :
 - Clonar o repositório na pasta desejada.
 - Baixar os pacotes no nuget.
 - Alterar a DefaultConnection na aba ConnectionStrings do Appsettings.json. 
 - Alterar o optionsBuilder.UseSqlServer() no OnConfiguring no arquivo CarContext.
 - Executar o projeto.
+- O projeto será aberto no navegador na url disponibilizando o swagger : https://localhost:5001/index.html
 
 
+Se desejar usar o postman,disponibilizei a collection com as requisições no arquivo ApiCarro.postman_collection.json .
 
-Pacotes do nuget necessários:
-- Microsoft.EntityFrameworkCore.Design v3.1.24
-- Microsoft.EntityFrameworkCore.SqlLite v3.1.24
-- Microsoft.EntityFrameworkCore.SqlServer v3.1.24
-- Microsoft.EntityFrameworkCore.SqlServer.Design v1.1.16
-- Microsoft.EntityFrameworkCore.Tools v3.1.4
+Como rodar através do docker : 
+	OBS : Esses comandos devem ser executados onde se encontra o arquivo DockerFile do projeto.
+ - Alterar o DefaultConnection na aba ConnectionStrings do Appsettings.json :
+	"DefaultConnection": "Server=host.docker.internal; Database=CarroApp;User Id={inserirAquiOUsarioDoSeuBanco};Password={inserirAquiOPasswordDoSeuBanco};"
+ - Alerar o optionsBuilder.UseSqlServer no CarContext :
+	 optionsBuilder.UseSqlServer("Server=host.docker.internal; Database=CarroApp;User Id={inserirAquiOUsarioDoSeuBanco};Password={inserirAquiOPasswordDoSeuBanco};");
+- Buildar a imagem:
+	docker build -t apicar:01  .
+- Subir o container : 
+	docker run --name container-apicar-01 -p 5010:80 apicar:01
+- O projeto será aberto no navegador na url disponibilizando o swagger : https://localhost:5010/index.html
 
-
-
-
-Documentação para alterar a connection string e optionsBuilder.
-
-SqlConnection (.NET)
-
-Conexão padrão utilizando Login e Senha do SQL
-
-**Data Source=meuServidor; Initial Catalog=CarroApp; User Id=NomeUsuario; Password=SenhaUsuario;** 
-
-ou
-
-**Server=meuServidor; Database=CarroApp; User ID=NomeUsuario; Password=SenhaUsuario; Trusted_Connection=False;**
-
-Conexão utilizando " Conexão Segura via Windows"
-
-**Data Source=meuServidor; Initial Catalog=CarroApp; Integrated Security=SSPI;**
-
-ou
-
-**Server=meuServidor; Database=CarroApp; Trusted_Connection=True;**

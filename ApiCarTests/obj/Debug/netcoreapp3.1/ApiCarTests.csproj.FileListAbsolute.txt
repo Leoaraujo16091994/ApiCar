@@ -2,8 +2,6 @@ C:\Users\Josafa\Desktop\ApiCar\ApiCarTests\obj\Debug\netcoreapp3.1\ApiCarTests.c
 C:\Users\Josafa\Desktop\ApiCar\ApiCarTests\obj\Debug\netcoreapp3.1\ApiCarTests.csproj.CoreCompileInputs.cache
 C:\Users\Josafa\Desktop\ApiCar\ApiCarTests\obj\Debug\netcoreapp3.1\ApiCarTests.AssemblyInfoInputs.cache
 C:\Users\Josafa\Desktop\ApiCar\ApiCarTests\obj\Debug\netcoreapp3.1\ApiCarTests.AssemblyInfo.cs
-C:\Users\Josafa\Desktop\ApiCar\ApiCarTests\bin\Debug\netcoreapp3.1\ApiCar.Views.dll
-C:\Users\Josafa\Desktop\ApiCar\ApiCarTests\bin\Debug\netcoreapp3.1\ApiCar.Views.pdb
 C:\Users\Josafa\Desktop\ApiCar\ApiCarTests\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Josafa\Desktop\ApiCar\ApiCarTests\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Josafa\Desktop\ApiCar\ApiCarTests\bin\Debug\netcoreapp3.1\Properties\launchSettings.json

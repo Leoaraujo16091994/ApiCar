@@ -11,7 +11,7 @@ namespace ApiCar.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CarroApp;Data Source=JOSAFA-PC\\SQLEXPRESS");
+            optionsBuilder.UseSqlServer("Server=host.docker.internal; Database=CarroApp;User Id=leo;Password=123;");
         }
     }
 }

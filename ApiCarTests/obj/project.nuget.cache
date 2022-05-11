@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p9cxpq3iEVrpLrhj5hKvreW2cNc3HYq/mF55G1UpJdPDaFJ52ul7qo0tvAHzLdPK7zEjNC4ZyGPqX3JV1Ow5Zg==",
+  "dgSpecHash": "xFnKi7XQVe+SYH+Dz2GFOJTPvNXCFuiHL8q6bK5iL4hwQBbTW5lvlnCfaSnwrGtskFlLVBQyWpruL4TDxvw6QQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Josafa\\Desktop\\ApiCar\\ApiCarTests\\ApiCarTests.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,7 @@
     "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.testplatform.objectmodel\\16.5.0\\microsoft.testplatform.objectmodel.16.5.0.nupkg.sha512",
     "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.testplatform.testhost\\16.5.0\\microsoft.testplatform.testhost.16.5.0.nupkg.sha512",
+    "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512",
     "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Josafa\\.nuget\\packages\\moq\\4.17.2\\moq.4.17.2.nupkg.sha512",

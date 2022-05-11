@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uMZ1voiVwlofyz9f5tAYSfRrnhdT1l9VxZuv20VQjAkg9N5EZykPeoLJ2X+SeSA3tBM6FIb1NoUMakcQeAnM9g==",
+  "dgSpecHash": "qqnkD8H0GL1OZVWbhlbT0lWFyHq2sgjMC1NS8AnVRFLGsT6XqJ3rMYIc9+0RKeWb/+DWd7xv2R/179ebf7EbxQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Josafa\\Desktop\\ApiCar\\ApiCar\\ApiCar.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512",
     "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Josafa\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Josafa\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",

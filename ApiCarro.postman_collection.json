@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "cca4ab7c-f9c6-45a5-805c-7d61723541b9",
+		"name": "ApiCarro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/car",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"car"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AbastecerCarro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/car/abastecerCarro?litrosGasolinaAbastecido=5&modelo=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"car",
+						"abastecerCarro"
+					],
+					"query": [
+						{
+							"key": "litrosGasolinaAbastecido",
+							"value": "5"
+						},
+						{
+							"key": "modelo",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AutonomiaAllCarro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/car/autonomiaAllCarro",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"car",
+						"autonomiaAllCarro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtivarModoTurbo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/car/ativarModoTurbo?id=30",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"car",
+						"ativarModoTurbo"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtivarModoEconomico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/car/ativarModoEconomico?id=31",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"car",
+						"ativarModoEconomico"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CarroMaxAutonomia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/car/CarroMaxAutonomia",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"car",
+						"CarroMaxAutonomia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CarroMaisRapidoByDistancia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/car/carroMaisRapidoByDistancia?distancia=1840",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"car",
+						"carroMaisRapidoByDistancia"
+					],
+					"query": [
+						{
+							"key": "distancia",
+							"value": "1840"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
